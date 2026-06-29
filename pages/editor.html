@@ -3,13 +3,10 @@ name="viewport"
 content="width=device-width, initial-scale=1.0"
 />
 
-  <title>Editor - Quavron</title>  <link
+  <title>Quavron IDE</title>  <link
     rel="stylesheet"
     href="/css/style.css"
-  />  <script
-    defer
-    src="/js/editor.js"
-  ></script></head><body>  <div class="editor-layout"><!-- Sidebar -->
+  />  <!-- Monaco Editor CDN -->  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script></head><body>  <div class="editor-layout"><!-- Sidebar -->
 
 <aside class="editor-sidebar">
 
@@ -35,35 +32,32 @@ content="width=device-width, initial-scale=1.0"
 
 </aside>
 
-<!-- Main Editor -->
+<!-- Main -->
 
 <main class="editor-main">
 
+  <!-- Topbar -->
+
   <div class="editor-topbar">
 
-    <button>
+    <button id="run-btn">
       Run
     </button>
 
-    <button>
+    <button id="save-btn">
       Save
     </button>
 
-    <button>
+    <button id="deploy-btn">
       Deploy
     </button>
 
   </div>
 
-  <div
-    id="editor"
-    class="editor-container"
-  >
+  <!-- Monaco Editor -->
 
-    <!-- Monaco Editor Will Be Here -->
-
-  </div>
+  <div id="editor"></div>
 
 </main>
 
-  </div></body></html>
+  </div>  <script src="/js/editor.js"></script></body></html>
