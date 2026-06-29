@@ -3,61 +3,159 @@ name="viewport"
 content="width=device-width, initial-scale=1.0"
 />
 
-  <title>Quavron IDE</title>  <link
+  <title>Quavron Editor</title>  <link
     rel="stylesheet"
     href="/css/style.css"
-  />  <!-- Monaco Editor CDN -->  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script></head><body>  <div class="editor-layout"><!-- Sidebar -->
+  /></head><body class="editor-page">  <!-- ========================================
+       TOP NAVBAR
+  ========================================= -->  <header class="topbar"><div class="topbar-left">
 
-<aside class="editor-sidebar">
-
-  <div class="editor-logo">
-    Quavron IDE
+  <div class="logo">
+    Quavron
   </div>
 
-  <div class="file-explorer">
+  <button class="top-btn">
+    Explorer
+  </button>
 
-    <div class="file-item">
-      index.html
-    </div>
+  <button class="top-btn">
+    Projects
+  </button>
 
-    <div class="file-item">
-      style.css
-    </div>
+  <button class="top-btn">
+    Marketplace
+  </button>
 
-    <div class="file-item">
-      main.js
-    </div>
+</div>
 
+<div class="topbar-center">
+
+  <input
+    type="text"
+    placeholder="Search files, commands..."
+    class="search-bar"
+  />
+
+</div>
+
+<div class="topbar-right">
+
+  <select class="language-switcher">
+
+    <option>EN</option>
+    <option>AR</option>
+    <option>FR</option>
+    <option>ES</option>
+    <option>RU</option>
+    <option>DE</option>
+    <option>IT</option>
+    <option>ZH</option>
+
+  </select>
+
+  <button class="run-btn">
+    ▶ Run
+  </button>
+
+  <button class="save-btn">
+    💾 Save
+  </button>
+
+  <button class="ai-btn">
+    🤖 AI
+  </button>
+
+</div>
+
+  </header>  <!-- ========================================
+       MAIN EDITOR AREA
+  ========================================= -->  <main class="editor-layout"><!-- ========================================
+     SIDEBAR
+========================================= -->
+
+<aside class="sidebar">
+
+  <div class="sidebar-title">
+    Explorer
   </div>
+
+  <ul class="file-tree">
+
+    <li>📁 src</li>
+
+    <li>📁 components</li>
+
+    <li>📁 pages</li>
+
+    <li>📄 index.html</li>
+
+    <li>📄 style.css</li>
+
+    <li>📄 app.js</li>
+
+    <li>📄 package.json</li>
+
+  </ul>
 
 </aside>
 
-<!-- Main -->
+<!-- ========================================
+     EDITOR SECTION
+========================================= -->
 
-<main class="editor-main">
+<section class="editor-section">
 
-  <!-- Topbar -->
+  <!-- TABS -->
 
-  <div class="editor-topbar">
+  <div class="editor-tabs">
 
-    <button id="run-btn">
-      Run
-    </button>
+    <div class="tab active-tab">
+      index.html
+    </div>
 
-    <button id="save-btn">
-      Save
-    </button>
+    <div class="tab">
+      style.css
+    </div>
 
-    <button id="deploy-btn">
-      Deploy
-    </button>
+    <div class="tab">
+      app.js
+    </div>
 
   </div>
 
-  <!-- Monaco Editor -->
+  <!-- MONACO PLACEHOLDER -->
 
-  <div id="editor"></div>
+  <div class="editor-container">
 
-</main>
+    <textarea
+      class="code-editor"
+    >
 
-  </div>  <script src="/js/editor.js"></script></body></html>
+<!DOCTYPE html><html><head>
+  <title>Quavron</title>
+</head><body>  <h1>Hello from Quavron IDE 🚀</h1></body></html>
+        </textarea>  </div>
+
+</section>
+
+  </main>  <!-- ========================================
+       TERMINAL
+  ========================================= -->  <section class="terminal-section"><div class="terminal-header">
+  Terminal
+</div>
+
+<div class="terminal-body">
+
+  <p>
+    > Quavron Terminal Ready...
+  </p>
+
+  <p>
+    > npm run dev
+  </p>
+
+</div>
+
+  </section>  <!-- ========================================
+       JS FILES
+  ========================================= -->  <script src="/js/editor.js"></script></body></html>
