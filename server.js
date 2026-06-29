@@ -24,17 +24,33 @@ app.use(express.urlencoded({ extended: true }));
 Static Folders
 ======================================== */
 
-app.use("/css", express.static(path.join(__dirname, "css")));
+app.use(
+"/css",
+express.static(
+path.join(__dirname, "css")
+)
+);
 
-app.use("/js", express.static(path.join(__dirname, "js")));
+app.use(
+"/js",
+express.static(
+path.join(__dirname, "js")
+)
+);
 
-app.use("/public", express.static(path.join(__dirname, "public")));
+app.use(
+"/public",
+express.static(
+path.join(__dirname, "public")
+)
+);
 
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-
-/* ========================================
-Pages
-======================================== */
+app.use(
+"/uploads",
+express.static(
+path.join(__dirname, "uploads")
+)
+);
 
 /* ========================================
 Static Pages
@@ -44,6 +60,77 @@ app.use(
 express.static(
 path.join(__dirname, "pages")
 )
+);
+
+/* ========================================
+API Routes
+======================================== */
+
+const authRoutes = require(
+"./backend/routes/auth"
+);
+
+const usersRoutes = require(
+"./backend/routes/users"
+);
+
+const projectsRoutes = require(
+"./backend/routes/projects"
+);
+
+const filesRoutes = require(
+"./backend/routes/files"
+);
+
+const aiRoutes = require(
+"./backend/routes/ai"
+);
+
+const settingsRoutes = require(
+"./backend/routes/settings"
+);
+
+const searchRoutes = require(
+"./backend/routes/search"
+);
+
+/* ========================================
+Use API Routes
+======================================== */
+
+app.use(
+"/api/auth",
+authRoutes
+);
+
+app.use(
+"/api/users",
+usersRoutes
+);
+
+app.use(
+"/api/projects",
+projectsRoutes
+);
+
+app.use(
+"/api/files",
+filesRoutes
+);
+
+app.use(
+"/api/ai",
+aiRoutes
+);
+
+app.use(
+"/api/settings",
+settingsRoutes
+);
+
+app.use(
+"/api/search",
+searchRoutes
 );
 
 /* ========================================
@@ -63,47 +150,66 @@ __dirname,
 });
 
 /* ========================================
-Routes
+Editor Page
 ======================================== */
 
-const authRoutes = require("./backend/routes/auth");
+app.get("/editor", (req, res) => {
 
-const usersRoutes = require("./backend/routes/users");
+res.sendFile(
+path.join(
+__dirname,
+"pages",
+"editor.html"
+)
+);
 
-const projectsRoutes = require("./backend/routes/projects");
-
-const filesRoutes = require("./backend/routes/files");
-
-const aiRoutes = require("./backend/routes/ai");
-
-const settingsRoutes = require("./backend/routes/settings");
-
-const searchRoutes = require("./backend/routes/search");
+});
 
 /* ========================================
-API Endpoints
+Dashboard Page
 ======================================== */
 
-app.use("/api/auth", authRoutes);
+app.get("/dashboard", (req, res) => {
 
-app.use("/api/users", usersRoutes);
+res.sendFile(
+path.join(
+__dirname,
+"pages",
+"dashboard.html"
+)
+);
 
-app.use("/api/projects", projectsRoutes);
-
-app.use("/api/files", filesRoutes);
-
-app.use("/api/ai", aiRoutes);
-
-app.use("/api/settings", settingsRoutes);
-
-app.use("/api/search", searchRoutes);
+});
 
 /* ========================================
-Main Route
+Login Page
 ======================================== */
- => {
 
-res.sendFile(path.join(__dirname, "pages", "index.html"));
+app.get("/login", (req, res) => {
+
+res.sendFile(
+path.join(
+__dirname,
+"pages",
+"login.html"
+)
+);
+
+});
+
+/* ========================================
+Register Page
+======================================== */
+
+app.get("/register", (req, res) => {
+
+res.sendFile(
+path.join(
+__dirname,
+"pages",
+"register.html"
+)
+);
 
 });
 
@@ -121,15 +227,7 @@ message: "Route Not Found"
 });
 
 /* ========================================
-Start Server
+Export App For Vercel
 ======================================== */
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-
-console.log(
-"🚀 Quavron Server Running On Port ${PORT}"
-);
-
-});
+module.exports = app;
