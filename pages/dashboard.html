@@ -3,79 +3,246 @@ name="viewport"
 content="width=device-width, initial-scale=1.0"
 />
 
-  <title>Dashboard - Quavron</title>  <link
+  <title>Quavron Dashboard</title>  <link
     rel="stylesheet"
     href="/css/style.css"
-  /></head><body>  <div class="dashboard"><!-- Sidebar -->
+  /></head><body class="dashboard-page">  <!-- ========================================
+       TOPBAR
+  ========================================= -->  <header class="dashboard-topbar"><div class="dashboard-logo">
+  Quavron
+</div>
 
-<aside class="sidebar">
+<div class="dashboard-search">
 
-  <div class="sidebar-logo">
-    Quavron
-  </div>
+  <input
+    type="text"
+    placeholder="Search projects..."
+  />
 
-  <nav class="sidebar-menu">
+</div>
 
-    <a href="#">
+<div class="dashboard-actions">
+
+  <button class="dashboard-btn">
+    + New Project
+  </button>
+
+  <button class="dashboard-btn">
+    AI Assistant
+  </button>
+
+  <img
+    src="https://ui-avatars.com/api/?name=User"
+    alt="User"
+    class="user-avatar"
+  />
+
+</div>
+
+  </header>  <!-- ========================================
+       MAIN LAYOUT
+  ========================================= -->  <main class="dashboard-layout"><!-- ========================================
+     SIDEBAR
+========================================= -->
+
+<aside class="dashboard-sidebar">
+
+  <ul>
+
+    <li class="active-menu">
       Dashboard
-    </a>
+    </li>
 
-    <a href="/pages/editor.html">
-      Editor
-    </a>
-
-    <a href="#">
+    <li>
       Projects
-    </a>
+    </li>
 
-    <a href="#">
+    <li>
       Deployments
-    </a>
+    </li>
 
-    <a href="#">
+    <li>
       Marketplace
-    </a>
+    </li>
 
-    <a href="#">
+    <li>
+      AI Tools
+    </li>
+
+    <li>
+      Analytics
+    </li>
+
+    <li>
       Settings
-    </a>
+    </li>
 
-  </nav>
+  </ul>
 
 </aside>
 
-<!-- Main Content -->
+<!-- ========================================
+     CONTENT
+========================================= -->
 
-<main class="dashboard-content">
+<section class="dashboard-content">
 
-  <h1>
-    Welcome Back
-  </h1>
+  <!-- STATS -->
 
-  <div class="dashboard-cards">
+  <div class="stats-grid">
 
-    <div class="dashboard-card">
-      <h2>Projects</h2>
-      <p>12 Active Projects</p>
+    <div class="stats-card">
+
+      <h3>
+        Projects
+      </h3>
+
+      <p>
+        12
+      </p>
+
     </div>
 
-    <div class="dashboard-card">
-      <h2>Deployments</h2>
-      <p>5 Running Deployments</p>
+    <div class="stats-card">
+
+      <h3>
+        Deployments
+      </h3>
+
+      <p>
+        8
+      </p>
+
     </div>
 
-    <div class="dashboard-card">
-      <h2>Storage</h2>
-      <p>8GB Used</p>
+    <div class="stats-card">
+
+      <h3>
+        Team Members
+      </h3>
+
+      <p>
+        5
+      </p>
+
     </div>
 
-    <div class="dashboard-card">
-      <h2>Team Members</h2>
-      <p>4 Collaborators</p>
+    <div class="stats-card">
+
+      <h3>
+        AI Requests
+      </h3>
+
+      <p>
+        152
+      </p>
+
     </div>
 
   </div>
 
-</main>
+  <!-- RECENT PROJECTS -->
 
-  </div></body></html>
+  <div class="projects-section">
+
+    <div class="section-header">
+
+      <h2>
+        Recent Projects
+      </h2>
+
+      <button>
+        View All
+      </button>
+
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+
+        <h3>
+          Quavron IDE
+        </h3>
+
+        <p>
+          AI Cloud Development Platform
+        </p>
+
+        <button>
+          Open Project
+        </button>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>
+          Portfolio Website
+        </h3>
+
+        <p>
+          Personal Portfolio Design
+        </p>
+
+        <button>
+          Open Project
+        </button>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>
+          SaaS Dashboard
+        </h3>
+
+        <p>
+          Analytics Admin Dashboard
+        </p>
+
+        <button>
+          Open Project
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- QUICK ACTIONS -->
+
+  <div class="quick-actions">
+
+    <h2>
+      Quick Actions
+    </h2>
+
+    <div class="actions-grid">
+
+      <button>
+        Create Project
+      </button>
+
+      <button>
+        Open IDE
+      </button>
+
+      <button>
+        AI Generate
+      </button>
+
+      <button>
+        Deploy App
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+  </main>  <!-- ========================================
+       JS
+  ========================================= -->  <script src="/js/main.js"></script></body></html>
