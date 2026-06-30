@@ -7,68 +7,6 @@ const morgan = require("morgan");
 require("dotenv").config();
 
 /* ========================================
-IMPORT ROUTES
-======================================== */
-
-const authRoutes =
-require("./routes/auth");
-
-const userRoutes =
-require("./routes/users");
-
-const searchRoutes =
-require("./routes/search");
-
-const notificationsRoutes =
-require("./routes/notifications-real");
-
-const storageRoutes =
-require("./routes/storage");
-
-const deployRoutes =
-require("./routes/deploy");
-
-const terminalRoutes =
-require("./routes/terminal-real");
-
-const githubRoutes =
-require("./routes/github");
-
-const gitRoutes =
-require("./routes/git");
-
-const databaseRoutes =
-require("./routes/database");
-
-const aiRoutes =
-require("./routes/ai");
-
-const extensionsRoutes =
-require("./routes/extensions");
-
-const collaborationRoutes =
-require("./routes/collaboration");
-
-const analyticsRoutes =
-require("./routes/analytics-real");
-
-const projectsRoutes =
-require("./routes/projects");
-
-const filesRoutes =
-require("./routes/files");
-
-/* ========================================
-MIDDLEWARE
-======================================== */
-
-const loggerMiddleware =
-require("./middleware/logger");
-
-const errorMiddleware =
-require("./middleware/error");
-
-/* ========================================
 APP
 ======================================== */
 
@@ -90,8 +28,6 @@ extended: true
 
 app.use(morgan("dev"));
 
-app.use(loggerMiddleware);
-
 /* ========================================
 ROOT ROUTE
 ======================================== */
@@ -104,10 +40,6 @@ success: true,
 
 name: "Quavron API",
 
-company: "Quavron",
-
-branch: "ALGERIEN",
-
 version: "1.0.0",
 
 status: "Running 🚀"
@@ -117,40 +49,20 @@ status: "Running 🚀"
 });
 
 /* ========================================
-API ROUTES
+TEST ROUTE
 ======================================== */
 
-app.use("/api/auth", authRoutes);
+app.get("/api/test", (req, res) => {
 
-app.use("/api/users", userRoutes);
+res.json({
 
-app.use("/api/search", searchRoutes);
+success: true,
 
-app.use("/api/notifications", notificationsRoutes);
+message: "API Working Successfully ✅"
 
-app.use("/api/storage", storageRoutes);
+});
 
-app.use("/api/deploy", deployRoutes);
-
-app.use("/api/terminal", terminalRoutes);
-
-app.use("/api/github", githubRoutes);
-
-app.use("/api/git", gitRoutes);
-
-app.use("/api/database", databaseRoutes);
-
-app.use("/api/ai", aiRoutes);
-
-app.use("/api/extensions", extensionsRoutes);
-
-app.use("/api/collaboration", collaborationRoutes);
-
-app.use("/api/analytics", analyticsRoutes);
-
-app.use("/api/projects", projectsRoutes);
-
-app.use("/api/files", filesRoutes);
+});
 
 /* ========================================
 404 HANDLER
@@ -169,10 +81,22 @@ message: "Route Not Found"
 });
 
 /* ========================================
-ERROR HANDLER
+GLOBAL ERROR HANDLER
 ======================================== */
 
-app.use(errorMiddleware);
+app.use((err, req, res, next) => {
+
+console.error(err);
+
+res.status(500).json({
+
+success: false,
+
+message: "Internal Server Error"
+
+});
+
+});
 
 /* ========================================
 EXPORT APP
