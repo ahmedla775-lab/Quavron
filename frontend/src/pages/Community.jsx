@@ -6,11 +6,23 @@ return (
 
   <h1>🌐 Community</h1>
 
-  <p>
+  <div className="card">
 
-    Developer Social Platform
+    Ahmed shared a new project 🚀
 
-  </p>
+  </div>
+
+  <div className="card">
+
+    New AI Extension released
+
+  </div>
+
+  <div className="card">
+
+    120 Developers Online
+
+  </div>
 
 </div>
 
