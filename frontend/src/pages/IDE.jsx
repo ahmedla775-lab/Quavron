@@ -3,7 +3,10 @@ import Editor from "@monaco-editor/react";
 
 function IDE() {
 
+  /* FILE SYSTEM */
+
   const defaultFiles = {
+
     "App.jsx": `export default function App() {
 
   return (
@@ -12,11 +15,33 @@ function IDE() {
     </h1>
   );
 
+}`,
+
+    "main.jsx": `import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./style.css";
+
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(<App />);`,
+
+    "style.css": `body {
+  background: #0f172a;
+  color: white;
+  font-family: Arial;
+}`,
+
+    "package.json": `{
+  "name": "quavron",
+  "version": "1.0.0"
 }`
+
   };
 
-  const [files, setFiles] =
-    useState(defaultFiles);
+  /* STATES */
+
+  const [files] = useState(defaultFiles);
 
   const [activeFile, setActiveFile] =
     useState("App.jsx");
@@ -38,8 +63,11 @@ function IDE() {
   /* OPEN FILE */
 
   const openFile = (file) => {
+
     setActiveFile(file);
+
     setCode(files[file]);
+
   };
 
   /* AI GENERATOR */
@@ -50,7 +78,7 @@ function IDE() {
 
     let generated = "";
 
-    /* LOGIN */
+    /* LOGIN PAGE */
 
     if (
       prompt.toLowerCase().includes("login")
@@ -98,13 +126,16 @@ function IDE() {
 
     <div>
 
-      <h1>Dashboard UI 🚀</h1>
+      <h1>
+        Dashboard UI 🚀
+      </h1>
 
     </div>
 
   );
 
 }`;
+
     }
 
     /* DEFAULT */
@@ -116,26 +147,31 @@ function IDE() {
 export default function Component() {
 
   return (
+
     <div>
       New Component 🚀
     </div>
+
   );
 
 }`;
+
     }
 
     /* UPDATE EDITOR */
 
     setCode(generated);
 
-    /* ADD MESSAGE */
+    /* AI CHAT */
 
     setMessages([
       ...messages,
+
       {
         role: "user",
         text: prompt
       },
+
       {
         role: "ai",
         text: "Generating component..."
@@ -143,13 +179,14 @@ export default function Component() {
     ]);
 
     setPrompt("");
+
   };
 
   return (
 
     <div className="ide-layout">
 
-      {/* FILES */}
+      {/* FILE EXPLORER */}
 
       <div className="files-panel">
 
@@ -215,13 +252,17 @@ export default function Component() {
               VITE v5.4 ready 🚀
             </p>
 
+            <p>
+              localhost:5173 running...
+            </p>
+
           </div>
 
         </div>
 
       </div>
 
-      {/* AI */}
+      {/* AI SIDEBAR */}
 
       <div className="ai-sidebar">
 
@@ -241,6 +282,7 @@ export default function Component() {
                   : "ai-message"
               }
             >
+
               <strong>
                 {msg.role === "user"
                   ? "You"
@@ -255,6 +297,8 @@ export default function Component() {
           ))}
 
         </div>
+
+        {/* AI INPUT */}
 
         <div className="ai-input">
 
