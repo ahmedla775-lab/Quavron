@@ -3,18 +3,13 @@ import Editor from "@monaco-editor/react";
 
 function IDE() {
 
-  /* FILE SYSTEM */
-
-  const defaultFiles = {
-
+  const initialFiles = {
     "App.jsx": `export default function App() {
-
   return (
     <h1>
       Welcome To Quavron 🚀
     </h1>
   );
-
 }`,
 
     "main.jsx": `import React from "react";
@@ -27,69 +22,99 @@ ReactDOM.createRoot(
 ).render(<App />);`,
 
     "style.css": `body {
-  background: #0f172a;
-  color: white;
-  font-family: Arial;
+  background:#0f172a;
+  color:white;
+  font-family:Arial;
 }`,
 
     "package.json": `{
-  "name": "quavron",
-  "version": "1.0.0"
+  "name":"quavron",
+  "version":"1.0.0"
 }`
-
   };
 
-  /* STATES */
-
-  const [files] = useState(defaultFiles);
+  const [files, setFiles] = useState(initialFiles);
 
   const [activeFile, setActiveFile] =
     useState("App.jsx");
 
-  const [code, setCode] =
-    useState(defaultFiles["App.jsx"]);
+  const [prompt, setPrompt] = useState("");
 
-  const [prompt, setPrompt] =
-    useState("");
-
-  const [messages, setMessages] =
-    useState([
-      {
-        role: "ai",
-        text: "Welcome to Quavron AI 🚀"
-      }
-    ]);
+  const [messages, setMessages] = useState([
+    {
+      role: "ai",
+      text: "Welcome to Quavron AI 🚀"
+    }
+  ]);
 
   /* OPEN FILE */
 
   const openFile = (file) => {
-
     setActiveFile(file);
+  };
 
-    setCode(files[file]);
+  /* UPDATE CODE */
+
+  const updateCode = (value) => {
+
+    setFiles({
+      ...files,
+      [activeFile]: value
+    });
 
   };
 
-  /* AI GENERATOR */
+  /* CREATE FILE */
 
-  const generateCode = () => {
+  const createFile = () => {
+
+    const name = prompt || "NewFile.js";
+
+    if (files[name]) return;
+
+    setFiles({
+      ...files,
+      [name]: "// New File 🚀"
+    });
+
+    setActiveFile(name);
+
+    setPrompt("");
+
+  };
+
+  /* DELETE FILE */
+
+  const deleteFile = (file) => {
+
+    const updated = { ...files };
+
+    delete updated[file];
+
+    setFiles(updated);
+
+    const firstFile =
+      Object.keys(updated)[0];
+
+    setActiveFile(firstFile);
+
+  };
+
+  /* AI GENERATION */
+
+  const generateAI = () => {
 
     if (!prompt) return;
 
     let generated = "";
-
-    /* LOGIN PAGE */
 
     if (
       prompt.toLowerCase().includes("login")
     ) {
 
       generated = `export default function Login() {
-
   return (
-
     <div className="login-page">
-
       <h1>Login</h1>
 
       <input
@@ -107,74 +132,51 @@ ReactDOM.createRoot(
       </button>
 
     </div>
-
   );
-
 }`;
 
     }
-
-    /* DASHBOARD */
 
     else if (
       prompt.toLowerCase().includes("dashboard")
     ) {
 
       generated = `export default function Dashboard() {
-
   return (
-
     <div>
-
-      <h1>
-        Dashboard UI 🚀
-      </h1>
-
+      Dashboard UI 🚀
     </div>
-
   );
-
 }`;
 
     }
-
-    /* DEFAULT */
 
     else {
 
-      generated = `// AI Generated Component
-
-export default function Component() {
-
+      generated = `export default function Component() {
   return (
-
     <div>
-      New Component 🚀
+      AI Component 🚀
     </div>
-
   );
-
 }`;
 
     }
 
-    /* UPDATE EDITOR */
-
-    setCode(generated);
-
-    /* AI CHAT */
+    setFiles({
+      ...files,
+      [activeFile]: generated
+    });
 
     setMessages([
       ...messages,
-
       {
         role: "user",
         text: prompt
       },
-
       {
         role: "ai",
-        text: "Generating component..."
+        text: "Component generated successfully 🚀"
       }
     ]);
 
@@ -186,11 +188,22 @@ export default function Component() {
 
     <div className="ide-layout">
 
-      {/* FILE EXPLORER */}
+      {/* FILES */}
 
       <div className="files-panel">
 
-        <h3>FILES</h3>
+        <div className="files-header">
+
+          <h3>FILES</h3>
+
+          <button
+            className="new-file-btn"
+            onClick={createFile}
+          >
+            +
+          </button>
+
+        </div>
 
         {Object.keys(files).map((file) => (
 
@@ -201,9 +214,21 @@ export default function Component() {
                 ? "file active"
                 : "file"
             }
-            onClick={() => openFile(file)}
           >
-            📄 {file}
+
+            <span
+              onClick={() => openFile(file)}
+            >
+              📄 {file}
+            </span>
+
+            <button
+              className="delete-btn"
+              onClick={() => deleteFile(file)}
+            >
+              ×
+            </button>
+
           </div>
 
         ))}
@@ -226,12 +251,10 @@ export default function Component() {
 
         <Editor
           height="500px"
-          language="javascript"
           theme="vs-dark"
-          value={code}
-          onChange={(value) =>
-            setCode(value)
-          }
+          language="javascript"
+          value={files[activeFile]}
+          onChange={updateCode}
         />
 
         {/* TERMINAL */}
@@ -262,7 +285,7 @@ export default function Component() {
 
       </div>
 
-      {/* AI SIDEBAR */}
+      {/* AI */}
 
       <div className="ai-sidebar">
 
@@ -290,6 +313,7 @@ export default function Component() {
               </strong>
 
               {" "}
+
               {msg.text}
 
             </div>
@@ -297,8 +321,6 @@ export default function Component() {
           ))}
 
         </div>
-
-        {/* AI INPUT */}
 
         <div className="ai-input">
 
@@ -311,7 +333,7 @@ export default function Component() {
             }
           />
 
-          <button onClick={generateCode}>
+          <button onClick={generateAI}>
             Send
           </button>
 
@@ -322,6 +344,7 @@ export default function Component() {
     </div>
 
   );
+
 }
 
 export default IDE;
