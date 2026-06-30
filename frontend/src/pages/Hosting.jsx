@@ -6,11 +6,21 @@ return (
 
   <h1>☁ Hosting</h1>
 
-  <p>
+  <div className="cards">
 
-    Deploy Your Applications
+    <div className="card">
+      Active Servers: 12
+    </div>
 
-  </p>
+    <div className="card">
+      Deployments: 54
+    </div>
+
+    <div className="card">
+      CDN Online
+    </div>
+
+  </div>
 
 </div>
 
