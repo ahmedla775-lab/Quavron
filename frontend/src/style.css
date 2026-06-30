@@ -534,3 +534,102 @@ height: 38px;
 border-radius: 50%;
 
 }
+/* IDE LAYOUT */
+
+.ide-layout {
+
+display: flex;
+
+gap: 20px;
+
+margin-top: 20px;
+
+}
+
+/* IDE SIDEBAR */
+
+.ide-sidebar {
+
+width: 220px;
+
+background: #111827;
+
+border-radius: 15px;
+
+padding: 20px;
+
+}
+
+.ide-sidebar h3 {
+
+margin-bottom: 20px;
+
+}
+
+.file {
+
+padding: 12px;
+
+border-radius: 10px;
+
+margin-bottom: 10px;
+
+cursor: pointer;
+
+transition: 0.3s;
+
+background: rgba(255,255,255,0.03);
+
+}
+
+.file:hover {
+
+background: rgba(255,255,255,0.08);
+
+}
+
+.active-file {
+
+background: #2563eb;
+
+}
+
+/* IDE EDITOR */
+
+.ide-editor {
+
+flex: 1;
+
+background: #111827;
+
+border-radius: 15px;
+
+overflow: hidden;
+
+}
+
+/* TABS */
+
+.tabs {
+
+display: flex;
+
+background: #1f2937;
+
+border-bottom: 1px solid rgba(255,255,255,0.08);
+
+}
+
+.tab {
+
+padding: 12px 20px;
+
+cursor: pointer;
+
+}
+
+.active-tab {
+
+background: #2563eb;
+
+}
