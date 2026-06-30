@@ -6,11 +6,23 @@ return (
 
   <h1>⚙ Settings</h1>
 
-  <p>
+  <div className="card">
 
-    Manage Your Platform
+    Theme: Dark Mode
 
-  </p>
+  </div>
+
+  <div className="card">
+
+    Notifications: Enabled
+
+  </div>
+
+  <div className="card">
+
+    AI Assistant: Active
+
+  </div>
 
 </div>
 
