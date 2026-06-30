@@ -1,3 +1,5 @@
+import Editor from "@monaco-editor/react";
+
 function IDE() {
 
 return (
@@ -6,11 +8,24 @@ return (
 
   <h1>💻 Cloud IDE</h1>
 
-  <p>
+  <p>AI Powered Development Environment</p>
 
-    Quavron Development Workspace
+  <div className="editor">
 
-  </p>
+    <Editor
+      height="500px"
+      defaultLanguage="javascript"
+      theme="vs-dark"
+      defaultValue={`function hello() {
+
+console.log("Welcome to Quavron 🚀");
+
+}
+
+hello();`}
+/>
+
+  </div>
 
 </div>
 
