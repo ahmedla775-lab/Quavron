@@ -65,7 +65,7 @@ APP
 const app = express();
 
 /* ========================================
-MIDDLEWARE
+GLOBAL MIDDLEWARE
 ======================================== */
 
 app.use(cors());
@@ -99,6 +99,22 @@ branch: "ALGERIEN",
 version: "1.0.0",
 
 status: "Running 🚀"
+
+});
+
+});
+
+/* ========================================
+TEST ROUTE
+======================================== */
+
+app.get("/api/test", (req, res) => {
+
+res.json({
+
+success: true,
+
+message: "API Working Successfully ✅"
 
 });
 
@@ -223,18 +239,7 @@ message: "Internal Server Error"
 });
 
 /* ========================================
-SERVER
+EXPORT APP
 ======================================== */
 
-const PORT =
-process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-
-console.log(
-
-`🚀 Quavron Server running on port ${PORT}`
-
-);
-
-});
+module.exports = app;
