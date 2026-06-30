@@ -1,3 +1,5 @@
+import Editor from "@monaco-editor/react";
+
 function App() {
 
 return (
@@ -31,6 +33,8 @@ return (
   {/* MAIN */}
 
   <main className="main">
+
+    {/* TOPBAR */}
 
     <header className="topbar">
 
@@ -74,19 +78,19 @@ return (
 
     </section>
 
-    {/* EDITOR */}
+    {/* REAL EDITOR */}
 
     <section className="editor">
 
-      <div className="editor-header">
+      <Editor
 
-        app.js
+        height="500px"
 
-      </div>
+        defaultLanguage="javascript"
 
-      <pre>
+        theme="vs-dark"
 
-{`function hello() {
+        defaultValue={`function hello() {
 
 console.log("Welcome to Quavron 🚀");
 
@@ -94,7 +98,7 @@ console.log("Welcome to Quavron 🚀");
 
 hello();`}
 
-      </pre>
+      />
 
     </section>
 
