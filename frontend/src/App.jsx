@@ -10,43 +10,49 @@ return (
 
   <aside className="sidebar">
 
-    <h2>🚀 Quavron</h2>
+    <div>
 
-    <div className="explorer">
+      <h2>🚀 Quavron</h2>
 
-      <h3>EXPLORER</h3>
+      <p className="subtitle">
+
+        Next Generation Platform
+
+      </p>
+
+    </div>
+
+    {/* NAVIGATION */}
+
+    <nav className="nav">
+
+      <h3>PLATFORM</h3>
 
       <ul>
 
-        <li>📁 src</li>
+        <li>🏠 Dashboard</li>
 
-        <li className="nested">
+        <li>💻 Cloud IDE</li>
 
-          📄 App.jsx
+        <li>🤖 AI Workspace</li>
 
-        </li>
+        <li>📚 Courses</li>
 
-        <li className="nested">
+        <li>🌐 Community</li>
 
-          📄 main.jsx
+        <li>🛒 Marketplace</li>
 
-        </li>
+        <li>☁ Hosting</li>
 
-        <li>📁 public</li>
+        <li>💼 Freelance</li>
 
-        <li className="nested">
+        <li>📊 Analytics</li>
 
-          📄 favicon.ico
-
-        </li>
-
-        <li>📄 package.json</li>
-
-        <li>📄 vite.config.js</li>
+        <li>⚙ Settings</li>
 
       </ul>
 
-    </div>
+    </nav>
 
   </aside>
 
@@ -58,11 +64,25 @@ return (
 
     <header className="topbar">
 
-      <h1>Cloud IDE Dashboard</h1>
+      <div>
+
+        <h1>
+
+          Quavron Platform
+
+        </h1>
+
+        <p>
+
+          Build • Learn • Deploy • Collaborate
+
+        </p>
+
+      </div>
 
       <button className="primary">
 
-        New Project
+        Launch IDE
 
       </button>
 
@@ -96,21 +116,41 @@ return (
 
       </div>
 
+      <div className="card">
+
+        <h3>Courses</h3>
+
+        <p>84 Lessons</p>
+
+      </div>
+
     </section>
 
-    {/* REAL EDITOR */}
+    {/* WORKSPACE */}
 
-    <section className="editor">
+    <section className="workspace-grid">
 
-      <Editor
+      {/* IDE */}
 
-        height="70vh"
+      <div className="workspace-card">
 
-        defaultLanguage="javascript"
+        <h2>💻 Cloud IDE</h2>
 
-        theme="vs-dark"
+        <p>
 
-        defaultValue={`function hello() {
+          AI Powered Development Environment
+
+        </p>
+
+        <Editor
+
+          height="350px"
+
+          defaultLanguage="javascript"
+
+          theme="vs-dark"
+
+          defaultValue={`function hello() {
 
 console.log("Welcome to Quavron 🚀");
 
@@ -118,95 +158,87 @@ console.log("Welcome to Quavron 🚀");
 
 hello();`}
 
-        options={{
+          options={{
 
-          fontSize: 16,
+            fontSize: 14,
 
-          minimap: {
+            minimap: {
 
-            enabled: false
+              enabled: false
 
-          },
+            },
 
-          automaticLayout: true
+            automaticLayout: true
 
-        }}
+          }}
 
-      />
-
-    </section>
-
-    {/* TERMINAL */}
-
-    <section className="terminal">
-
-      <div className="terminal-header">
-
-        TERMINAL{/* AI ASSISTANT */}
-
-<section className="ai-panel">  <div className="ai-header">🤖 Quavron AI
-
-  </div>  <div className="ai-body"><div className="ai-message">
-
-  <strong>AI:</strong>
-
-  Welcome to Quavron AI Assistant 🚀
-
-</div>
-
-<div className="ai-message user">
-
-  <strong>You:</strong>
-
-  Create React Login Page
-
-</div>
-
-<div className="ai-message">
-
-  <strong>AI:</strong>
-
-  Generating component...
-
-</div>
-
-  </div>  <div className="ai-input"><input
-
-  type="text"
-
-  placeholder="Ask Quavron AI..."
-
-/>
-
-<button className="primary">
-
-  Send
-
-</button>
-
-  </div></section>
+        />
 
       </div>
 
-      <div className="terminal-body">
+      {/* AI */}
+
+      <div className="workspace-card">
+
+        <h2>🤖 AI Assistant</h2>
+
+        <div className="ai-message">
+
+          AI: Generate React Login Page
+
+        </div>
+
+        <div className="ai-message user">
+
+          You: Create dashboard UI
+
+        </div>
+
+        <input
+
+          type="text"
+
+          placeholder="Ask Quavron AI..."
+
+        />
+
+      </div>
+
+      {/* COURSES */}
+
+      <div className="workspace-card">
+
+        <h2>📚 Courses</h2>
+
+        <ul>
+
+          <li>React Masterclass</li>
+
+          <li>Node.js Backend</li>
+
+          <li>AI Engineering</li>
+
+          <li>Cyber Security</li>
+
+        </ul>
+
+      </div>
+
+      {/* COMMUNITY */}
+
+      <div className="workspace-card">
+
+        <h2>🌐 Community</h2>
 
         <p>
 
-          user@quavron:~$
-
-          npm run dev
+          Ahmed shared a new project 🚀
 
         </p>
 
         <p>
 
-          Starting development server...
-
-        </p>
-
-        <p>
-
-          VITE v5.4 ready in 120ms 🚀
+          New AI Extension released
 
         </p>
 
