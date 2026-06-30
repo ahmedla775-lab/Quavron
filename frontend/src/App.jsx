@@ -2,66 +2,103 @@ function App() {
 
 return (
 
-<div className="app">
+<div className="dashboard">
 
-  {/* NAVBAR */}
+  {/* SIDEBAR */}
 
-  <nav className="navbar">
+  <aside className="sidebar">
 
-    <div className="logo">
+    <h2>🚀 Quavron</h2>
 
-      🚀 Quavron
+    <ul>
 
-    </div>
+      <li>🏠 Dashboard</li>
 
-    <div className="nav-links">
+      <li>📁 Projects</li>
 
-      <button>Login</button>
+      <li>🤖 AI Assistant</li>
 
-      <button className="primary">
+      <li>💻 Terminal</li>
 
-        Get Started
+      <li>☁ Deploy</li>
 
-      </button>
+      <li>⚙ Settings</li>
 
-    </div>
+    </ul>
 
-  </nav>
+  </aside>
 
-  {/* HERO */}
+  {/* MAIN */}
 
-  <section className="hero">
+  <main className="main">
 
-    <h1>
+    <header className="topbar">
 
-      Next Generation Cloud IDE
-
-    </h1>
-
-    <p>
-
-      Build, Deploy and Collaborate
-      with AI-Powered Development.
-
-    </p>
-
-    <div className="hero-buttons">
+      <h1>Cloud IDE Dashboard</h1>
 
       <button className="primary">
 
-        Launch IDE
+        New Project
 
       </button>
 
-      <button>
+    </header>
 
-        Documentation
+    {/* CARDS */}
 
-      </button>
+    <section className="cards">
 
-    </div>
+      <div className="card">
 
-  </section>
+        <h3>Projects</h3>
+
+        <p>12 Active Projects</p>
+
+      </div>
+
+      <div className="card">
+
+        <h3>Deployments</h3>
+
+        <p>5 Running Apps</p>
+
+      </div>
+
+      <div className="card">
+
+        <h3>AI Usage</h3>
+
+        <p>1.2M Tokens</p>
+
+      </div>
+
+    </section>
+
+    {/* EDITOR */}
+
+    <section className="editor">
+
+      <div className="editor-header">
+
+        app.js
+
+      </div>
+
+      <pre>
+
+{`function hello() {
+
+console.log("Welcome to Quavron 🚀");
+
+}
+
+hello();`}
+
+      </pre>
+
+    </section>
+
+  </main>
 
 </div>
 
