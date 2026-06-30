@@ -12,21 +12,41 @@ return (
 
     <h2>🚀 Quavron</h2>
 
-    <div className="explorer">  <h3>EXPLORER</h3>  <ul><li>📁 src</li>
+    <div className="explorer">
 
-<li className="nested">📄 App.jsx</li>
+      <h3>EXPLORER</h3>
 
-<li className="nested">📄 main.jsx</li>
+      <ul>
 
-<li>📁 public</li>
+        <li>📁 src</li>
 
-<li className="nested">📄 favicon.ico</li>
+        <li className="nested">
 
-<li>📄 package.json</li>
+          📄 App.jsx
 
-<li>📄 vite.config.js</li>
+        </li>
 
-  </ul></div>
+        <li className="nested">
+
+          📄 main.jsx
+
+        </li>
+
+        <li>📁 public</li>
+
+        <li className="nested">
+
+          📄 favicon.ico
+
+        </li>
+
+        <li>📄 package.json</li>
+
+        <li>📄 vite.config.js</li>
+
+      </ul>
+
+    </div>
 
   </aside>
 
