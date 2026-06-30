@@ -6,11 +6,25 @@ return (
 
   <h1>📚 Courses</h1>
 
-  <p>
+  <div className="cards">
 
-    Learn Programming & AI
+    <div className="card">
+      React Masterclass
+    </div>
 
-  </p>
+    <div className="card">
+      Node.js Backend
+    </div>
+
+    <div className="card">
+      AI Engineering
+    </div>
+
+    <div className="card">
+      Cyber Security
+    </div>
+
+  </div>
 
 </div>
 
