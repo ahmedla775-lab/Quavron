@@ -6,10 +6,6 @@ const morgan = require("morgan");
 
 require("dotenv").config();
 
-/* ========================================
-ROUTES
-======================================== */
-
 const authRoutes =
 require("./routes/auth");
 
@@ -52,7 +48,7 @@ message: "Quavron Running 🚀"
 });
 
 /* ========================================
-AUTH ROUTES
+ROUTES
 ======================================== */
 
 app.use(
@@ -64,7 +60,22 @@ authRoutes
 );
 
 /* ========================================
-EXPORT
+PORT
 ======================================== */
 
-module.exports = app;
+const PORT =
+process.env.PORT || 3000;
+
+/* ========================================
+START SERVER
+======================================== */
+
+app.listen(PORT, () => {
+
+console.log(
+
+`🚀 Server running on ${PORT}`
+
+);
+
+});
