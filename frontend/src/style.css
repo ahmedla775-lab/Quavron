@@ -831,3 +831,65 @@ html {
   }
 
 }
+/* EXPLORER */
+
+.explorer-section {
+  margin-bottom: 20px;
+}
+
+.explorer-section p {
+  padding: 8px;
+  opacity: 0.7;
+}
+
+.nested {
+  padding-left: 20px !important;
+}
+
+/* STATUS BAR */
+
+.statusbar {
+  height: 35px;
+  background: #2563eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 13px;
+  color: white;
+}
+
+/* FILE ACTIONS */
+
+.files-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-file-btn {
+  background: #2563eb;
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* DELETE */
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+}
+
+/* FILE */
+
+.file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
