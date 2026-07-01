@@ -1,32 +1,155 @@
 function Community() {
 
-return (
+  const posts = [
 
-<div>
+    {
+      id: 1,
+      user: "Ahmed",
+      avatar: "https://i.pravatar.cc/50?img=1",
+      time: "2h ago",
+      content:
+        "🚀 بدأت تطوير Quavron Community System",
+      image:
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200",
+      likes: 124,
+      comments: 18,
+      reposts: 7
+    },
 
-  <h1>🌐 Community</h1>
+    {
+      id: 2,
+      user: "Sophia",
+      avatar: "https://i.pravatar.cc/50?img=5",
+      time: "5h ago",
+      content:
+        "💻 New React AI IDE is under testing!",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200",
+      likes: 342,
+      comments: 41,
+      reposts: 22
+    }
 
-  <div className="card">
+  ];
 
-    Ahmed shared a new project 🚀
+  return (
 
-  </div>
+    <div>
 
-  <div className="card">
+      <h1>🌐 Community Feed</h1>
 
-    New AI Extension released
+      <p
+        style={{
+          opacity: 0.7,
+          marginTop: "10px"
+        }}
+      >
+        Connect with developers worldwide
+      </p>
 
-  </div>
+      {/* CREATE POST */}
 
-  <div className="card">
+      <div className="create-post">
 
-    120 Developers Online
+        <textarea
+          placeholder="Share something with the community..."
+        />
 
-  </div>
+        <div className="create-actions">
 
-</div>
+          <button>
+            📷 Media
+          </button>
 
-);
+          <button>
+            💻 Code
+          </button>
+
+          <button className="post-btn">
+            Post
+          </button>
+
+        </div>
+
+      </div>
+
+      {/* POSTS */}
+
+      <div className="feed">
+
+        {posts.map((post) => (
+
+          <div
+            className="post-card"
+            key={post.id}
+          >
+
+            {/* HEADER */}
+
+            <div className="post-header">
+
+              <img
+                src={post.avatar}
+                alt=""
+              />
+
+              <div>
+
+                <h3>{post.user}</h3>
+
+                <span>
+                  {post.time}
+                </span>
+
+              </div>
+
+            </div>
+
+            {/* CONTENT */}
+
+            <p className="post-content">
+              {post.content}
+            </p>
+
+            {/* IMAGE */}
+
+            <img
+              className="post-image"
+              src={post.image}
+              alt=""
+            />
+
+            {/* ACTIONS */}
+
+            <div className="post-actions">
+
+              <button>
+                ❤️ {post.likes}
+              </button>
+
+              <button>
+                💬 {post.comments}
+              </button>
+
+              <button>
+                🔁 {post.reposts}
+              </button>
+
+              <button>
+                📌 Save
+              </button>
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+  );
 
 }
 
