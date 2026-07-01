@@ -1,37 +1,24 @@
 {
-"name": "quavron-frontend",
+  "name": "quavron-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
 
-"private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
 
-"version": "1.0.0",
+  "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "@supabase/supabase-js": "^2.45.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1"
+  },
 
-"type": "module",
-
-"scripts": {
-
-"dev": "vite",
-
-"build": "vite build"
-
-},
-
-"dependencies": {
-
-"@monaco-editor/react": "^4.6.0",
-"@supabase/supabase-js": "^2.45.4"
-"react": "^18.3.1",
-
-"react-dom": "^18.3.1",
-
-"react-router-dom": "^6.26.1"
-
-},
-
-"devDependencies": {
-
-"@vitejs/plugin-react": "^4.3.1",
-
-"vite": "^5.4.2"
-
-}
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2"
+  }
 }
