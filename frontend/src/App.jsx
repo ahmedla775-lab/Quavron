@@ -7,8 +7,10 @@ import {
 } from "react-router-dom";
 
 /* PAGES */
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+
 import Dashboard from "./pages/Dashboard";
 import IDE from "./pages/IDE";
 import Courses from "./pages/Courses";
@@ -206,42 +208,43 @@ function App() {
           </div>
 
           <div className="topbar-right">
-<div className="topbar-right">
 
-  <NavLink
-    to="/login"
-    className="auth-link"
-  >
-    Login
-  </NavLink>
+            <NavLink
+              to="/login"
+              className="auth-link"
+            >
+              Login
+            </NavLink>
 
-  <NavLink
-    to="/register"
-    className="auth-link register-btn"
-  >
-    Register
-  </NavLink>
+            <NavLink
+              to="/register"
+              className="auth-link register-btn"
+            >
+              Register
+            </NavLink>
 
-  <button className="icon-btn">
-    🔔
-  </button>
+            <button className="icon-btn">
+              🔔
+            </button>
 
-  <button className="icon-btn">
-    🤖
-  </button>
+            <button className="icon-btn">
+              🤖
+            </button>
 
-  <div className="profile">
+            <div className="profile">
 
-    <img
-      src="https://i.pravatar.cc/40"
-      alt="profile"
-    />
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="profile"
+              />
 
-    <span>Ahmed</span>
+              <span>Ahmed</span>
 
-  </div>
+            </div>
 
-</div>
+          </div>
+
+        </header>
 
         {/* ROUTES */}
 
@@ -291,15 +294,17 @@ function App() {
             path="/settings"
             element={<Settings />}
           />
-<Route
-  path="/login"
-  element={<Login />}
-/>
 
-<Route
-  path="/register"
-  element={<Register />}
-/>
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+
+          <Route
+            path="/register"
+            element={<Register />}
+          />
+
         </Routes>
 
       </main>
