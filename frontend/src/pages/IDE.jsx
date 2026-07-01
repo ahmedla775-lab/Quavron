@@ -379,42 +379,47 @@ ReactDOM.createRoot(
         </div>
 
         <iframe
-          title="preview"
-          className="preview-frame"
-          srcDoc={`
+  title="preview"
+  className="preview-frame"
+  srcDoc={`
 <html>
+
 <head>
+
 <style>
 ${files["style.css"] || ""}
 </style>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 </head>
 
 <body>
 
-<div id="root">
+<div id="root"></div>
 
-${files["App.jsx"]
-  ?.replace(
-    "export default function App() {",
-    ""
-  )
-  ?.replace("return (", "")
-  ?.replace(");", "")
-  ?.replace("}", "")
-}
+<script type="text/babel">
 
-<p style="color:#94a3b8">
-Quavron Rendering Engine
-</p>
+${files["App.jsx"] || ""}
 
-</div>
+const root =
+ReactDOM.createRoot(
+document.getElementById("root")
+);
+
+root.render(<App />);
+
+</script>
 
 </body>
+
 </html>
 `}
-        />
-
-      </div>
+/>
 
       {/* AI */}
 
