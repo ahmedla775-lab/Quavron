@@ -338,8 +338,6 @@ ReactDOM.createRoot(
             TERMINAL
           </div>
 
-          {/* STATUS BAR */}
-
           <div className="statusbar">
 
             <div>
