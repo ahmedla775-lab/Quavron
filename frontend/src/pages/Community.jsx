@@ -1,7 +1,6 @@
 function Community() {
 
   const posts = [
-
     {
       id: 1,
       user: "Ahmed",
@@ -29,12 +28,10 @@ function Community() {
       comments: 41,
       reposts: 22
     }
-
   ];
 
   return (
-
-    <div>
+    <div className="community-page">
 
       <h1>🌐 Community Feed</h1>
 
@@ -53,7 +50,7 @@ function Community() {
 
         <textarea
           placeholder="Share something with the community..."
-        />
+        ></textarea>
 
         <div className="create-actions">
 
@@ -90,7 +87,7 @@ function Community() {
 
               <img
                 src={post.avatar}
-                alt=""
+                alt="avatar"
               />
 
               <div>
@@ -116,7 +113,7 @@ function Community() {
             <img
               className="post-image"
               src={post.image}
-              alt=""
+              alt="post"
             />
 
             {/* ACTIONS */}
@@ -148,7 +145,6 @@ function Community() {
       </div>
 
     </div>
-
   );
 
 }
