@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 function Dashboard() {
+
+  const navigate = useNavigate();
 
   return (
 
@@ -32,11 +36,17 @@ function Dashboard() {
 
           <div className="hero-buttons">
 
-            <button className="primary-btn">
+            <button
+              className="primary-btn"
+              onClick={() => navigate("/ide")}
+            >
               Start Building
             </button>
 
-            <button className="secondary-btn">
+            <button
+              className="secondary-btn"
+              onClick={() => navigate("/community")}
+            >
               Explore Community
             </button>
 
@@ -107,7 +117,9 @@ function Dashboard() {
 
           <h2>🔥 Trending Projects</h2>
 
-          <button>
+          <button
+            onClick={() => navigate("/marketplace")}
+          >
             View All
           </button>
 
@@ -131,9 +143,13 @@ function Dashboard() {
 
             <div className="project-footer">
 
-              <button>Fork</button>
+              <button>
+                Fork
+              </button>
 
-              <button>Deploy</button>
+              <button>
+                Deploy
+              </button>
 
             </div>
 
@@ -155,9 +171,13 @@ function Dashboard() {
 
             <div className="project-footer">
 
-              <button>Fork</button>
+              <button>
+                Fork
+              </button>
 
-              <button>Deploy</button>
+              <button>
+                Deploy
+              </button>
 
             </div>
 
@@ -179,9 +199,15 @@ function Dashboard() {
 
             <div className="project-footer">
 
-              <button>Fork</button>
+              <button
+                onClick={() => navigate("/ide")}
+              >
+                Open IDE
+              </button>
 
-              <button>Deploy</button>
+              <button>
+                Deploy
+              </button>
 
             </div>
 
