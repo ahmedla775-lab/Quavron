@@ -66,21 +66,191 @@ alert(
 AUTH FORMS
 ======================================== */
 
-const authForms = document.querySelectorAll(
-".auth-form"
+/* ========================================
+AUTH SYSTEM WITH SUPABASE
+======================================== */
+
+// SUPABASE CONFIG
+
+const supabaseUrl =
+"https://bxjsfbexfjvqjiaqtmbm.supabase.co";
+
+const supabaseKey =
+"ضع_هنا_anon_public_key";
+
+const supabaseClient =
+supabase.createClient(
+supabaseUrl,
+supabaseKey
 );
+
+/* ========================================
+AUTH FORMS
+======================================== */
+
+const authForms =
+document.querySelectorAll(".auth-form");
 
 authForms.forEach(form => {
 
-form.addEventListener("submit", (e) => {
+form.addEventListener(
+"submit",
+async (e) => {
 
 e.preventDefault();
 
-alert("Authentication system coming soon 🚀");
+const emailInput =
+form.querySelector(
+'input[type="email"]'
+);
+
+const passwordInput =
+form.querySelector(
+'input[type="password"]'
+);
+
+if (
+!emailInput ||
+!passwordInput
+) {
+
+alert("Missing form fields");
+
+return;
+
+}
+
+const email =
+emailInput.value.trim();
+
+const password =
+passwordInput.value.trim();
+
+if (!email || !password) {
+
+alert(
+"Please enter email and password"
+);
+
+return;
+
+}
+
+/* ========================================
+REGISTER
+======================================== */
+
+const isRegisterForm =
+form.innerText
+.toLowerCase()
+.includes("create");
+
+if (isRegisterForm) {
+
+const { data, error } =
+await supabaseClient.auth.signUp({
+
+email,
+password
 
 });
 
+if (error) {
+
+alert(error.message);
+
+console.error(error);
+
+return;
+
+}
+
+alert("Account Created 🚀");
+
+console.log(
+"REGISTER SUCCESS",
+data
+);
+
+return;
+
+}
+
+/* ========================================
+LOGIN
+======================================== */
+
+const { data, error } =
+await supabaseClient
+.auth
+.signInWithPassword({
+
+email,
+password
+
 });
+
+if (error) {
+
+alert(error.message);
+
+console.error(error);
+
+return;
+
+}
+
+alert("Login Success 🚀");
+
+console.log(
+"LOGIN SUCCESS",
+data
+);
+
+/* ========================================
+SAVE SESSION
+======================================== */
+
+localStorage.setItem(
+"quavron_user",
+JSON.stringify(data.user)
+);
+
+/* ========================================
+REDIRECT
+======================================== */
+
+window.location.href =
+"/dashboard.html";
+
+}
+
+);
+
+});
+
+/* ========================================
+AUTO LOGIN CHECK
+======================================== */
+
+async function checkSession() {
+
+const {
+data: { session }
+} =
+await supabaseClient.auth.getSession();
+
+if (session) {
+
+console.log(
+"User already logged in"
+);
+
+}
+
+}
+
+checkSession();
 
 /* ========================================
 LANGUAGE SWITCHER
