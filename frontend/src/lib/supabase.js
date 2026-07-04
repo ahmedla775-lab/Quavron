@@ -5,7 +5,7 @@ const supabaseUrl =
 "https://bxjsfbexfjvqjiaqtmbm.supabase.co";
 
 const supabaseKey =
-"sb_publishable_Q2YDV3nTxgvM3GMNfAmZ0Q_NUNq6_gD";
+"ضع_هنا_مفتاح_ANON_PUBLIC";
 
 export const supabase =
 createClient(
