@@ -9,17 +9,17 @@ import App from "./App";
 import "./style.css";
 
 ReactDOM.createRoot(
-document.getElementById("root")
+  document.getElementById("root")
 ).render(
 
-<React.StrictMode>
+  <React.StrictMode>
 
-<BrowserRouter>
+    <BrowserRouter>
 
-  <App />
+      <App />
 
-</BrowserRouter>
+    </BrowserRouter>
 
-</React.StrictMode>
+  </React.StrictMode>
 
 );
