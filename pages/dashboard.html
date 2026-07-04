@@ -1,248 +1,387 @@
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8" /><meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-/>
+<!DOCTYPE html>
+<html lang="en">
 
-  <title>Quavron Dashboard</title>  <link
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Quavron Dashboard</title>
+
+  <link
     rel="stylesheet"
     href="/css/style.css"
-  /></head><body class="dashboard-page">  <!-- ========================================
+  />
+
+</head>
+
+<body class="dashboard-page">
+
+  <!-- ========================================
        TOPBAR
-  ========================================= -->  <header class="dashboard-topbar"><div class="dashboard-logo">
-  Quavron
-</div>
+  ========================================= -->
 
-<div class="dashboard-search">
+  <header class="dashboard-topbar">
 
-  <input
-    type="text"
-    placeholder="Search projects..."
-  />
+    <div class="dashboard-logo">
+      Quavron
+    </div>
 
-</div>
+    <div class="dashboard-search">
 
-<div class="dashboard-actions">
+      <input
+        type="text"
+        placeholder="Search projects..."
+      />
 
-  <button class="dashboard-btn">
-    + New Project
-  </button>
+    </div>
 
-  <button class="dashboard-btn">
-    AI Assistant
-  </button>
+    <div class="dashboard-actions">
 
-  <img
-    src="https://ui-avatars.com/api/?name=User"
-    alt="User"
-    class="user-avatar"
-  />
+      <button class="dashboard-btn">
+        + New Project
+      </button>
 
-</div>
+      <button class="dashboard-btn">
+        AI Assistant
+      </button>
 
-  </header>  <!-- ========================================
+      <img
+        src="https://ui-avatars.com/api/?name=User"
+        alt="User"
+        class="user-avatar"
+      />
+
+    </div>
+
+  </header>
+
+  <!-- ========================================
        MAIN LAYOUT
-  ========================================= -->  <main class="dashboard-layout"><!-- ========================================
-     SIDEBAR
-========================================= -->
+  ========================================= -->
 
-<aside class="dashboard-sidebar">
+  <main class="dashboard-layout">
 
-  <ul>
+    <!-- ========================================
+         SIDEBAR
+    ========================================= -->
 
-    <li class="active-menu">
-      Dashboard
-    </li>
+    <aside class="dashboard-sidebar">
 
-    <li>
-      Projects
-    </li>
+      <ul>
 
-    <li>
-      Deployments
-    </li>
+        <li class="active-menu">
+          Dashboard
+        </li>
 
-    <li>
-      Marketplace
-    </li>
+        <li>
+          Projects
+        </li>
 
-    <li>
-      AI Tools
-    </li>
+        <li>
+          Deployments
+        </li>
 
-    <li>
-      Analytics
-    </li>
+        <li>
+          Marketplace
+        </li>
 
-    <li>
-      Settings
-    </li>
+        <li>
+          AI Tools
+        </li>
 
-  </ul>
+        <li>
+          Analytics
+        </li>
 
-</aside>
+        <li>
+          Settings
+        </li>
 
-<!-- ========================================
-     CONTENT
-========================================= -->
+      </ul>
 
-<section class="dashboard-content">
+    </aside>
 
-  <!-- STATS -->
+    <!-- ========================================
+         CONTENT
+    ========================================= -->
 
-  <div class="stats-grid">
+    <section class="dashboard-content">
 
-    <div class="stats-card">
+      <!-- ========================================
+           WELCOME SECTION
+      ========================================= -->
 
-      <h3>
-        Projects
-      </h3>
+      <div
+        style="
+          background:#111827;
+          padding:25px;
+          border-radius:20px;
+          margin-bottom:30px;
+          border:1px solid rgba(255,255,255,0.05);
+        "
+      >
 
-      <p>
-        12
-      </p>
+        <h1
+          style="
+            font-size:32px;
+            margin-bottom:10px;
+            color:white;
+          "
+        >
+          Welcome Back 🚀
+        </h1>
 
-    </div>
-
-    <div class="stats-card">
-
-      <h3>
-        Deployments
-      </h3>
-
-      <p>
-        8
-      </p>
-
-    </div>
-
-    <div class="stats-card">
-
-      <h3>
-        Team Members
-      </h3>
-
-      <p>
-        5
-      </p>
-
-    </div>
-
-    <div class="stats-card">
-
-      <h3>
-        AI Requests
-      </h3>
-
-      <p>
-        152
-      </p>
-
-    </div>
-
-  </div>
-
-  <!-- RECENT PROJECTS -->
-
-  <div class="projects-section">
-
-    <div class="section-header">
-
-      <h2>
-        Recent Projects
-      </h2>
-
-      <button>
-        View All
-      </button>
-
-    </div>
-
-    <div class="projects-grid">
-
-      <div class="project-card">
-
-        <h3>
-          Quavron IDE
-        </h3>
-
-        <p>
-          AI Cloud Development Platform
+        <p
+          style="
+            color:#94a3b8;
+            font-size:15px;
+          "
+        >
+          Manage your cloud workspace, AI tools, projects, and deployments from one unified platform.
         </p>
-
-        <button>
-          Open Project
-        </button>
 
       </div>
 
-      <div class="project-card">
+      <!-- ========================================
+           STATS
+      ========================================= -->
 
-        <h3>
-          Portfolio Website
-        </h3>
+      <div class="stats-grid">
 
-        <p>
-          Personal Portfolio Design
-        </p>
+        <div class="stats-card">
 
-        <button>
-          Open Project
-        </button>
+          <h3>
+            Projects
+          </h3>
+
+          <p>
+            12
+          </p>
+
+        </div>
+
+        <div class="stats-card">
+
+          <h3>
+            Deployments
+          </h3>
+
+          <p>
+            8
+          </p>
+
+        </div>
+
+        <div class="stats-card">
+
+          <h3>
+            Team Members
+          </h3>
+
+          <p>
+            5
+          </p>
+
+        </div>
+
+        <div class="stats-card">
+
+          <h3>
+            AI Requests
+          </h3>
+
+          <p>
+            152
+          </p>
+
+        </div>
 
       </div>
 
-      <div class="project-card">
+      <!-- ========================================
+           RECENT PROJECTS
+      ========================================= -->
 
-        <h3>
-          SaaS Dashboard
-        </h3>
+      <div class="projects-section">
 
-        <p>
-          Analytics Admin Dashboard
-        </p>
+        <div class="section-header">
 
-        <button>
-          Open Project
-        </button>
+          <h2>
+            Recent Projects
+          </h2>
+
+          <button>
+            View All
+          </button>
+
+        </div>
+
+        <div class="projects-grid">
+
+          <div class="project-card">
+
+            <h3>
+              Quavron IDE
+            </h3>
+
+            <p>
+              AI Cloud Development Platform
+            </p>
+
+            <button>
+              Open Project
+            </button>
+
+          </div>
+
+          <div class="project-card">
+
+            <h3>
+              Portfolio Website
+            </h3>
+
+            <p>
+              Personal Portfolio Design
+            </p>
+
+            <button>
+              Open Project
+            </button>
+
+          </div>
+
+          <div class="project-card">
+
+            <h3>
+              SaaS Dashboard
+            </h3>
+
+            <p>
+              Analytics Admin Dashboard
+            </p>
+
+            <button>
+              Open Project
+            </button>
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
+      <!-- ========================================
+           QUICK ACTIONS
+      ========================================= -->
 
-  </div>
+      <div class="quick-actions">
 
-  <!-- QUICK ACTIONS -->
+        <h2>
+          Quick Actions
+        </h2>
 
-  <div class="quick-actions">
+        <div class="actions-grid">
 
-    <h2>
-      Quick Actions
-    </h2>
+          <button>
+            Create Project
+          </button>
 
-    <div class="actions-grid">
+          <button>
+            Open IDE
+          </button>
 
-      <button>
-        Create Project
-      </button>
+          <button>
+            AI Generate
+          </button>
 
-      <button>
-        Open IDE
-      </button>
+          <button>
+            Deploy App
+          </button>
 
-      <button>
-        AI Generate
-      </button>
+        </div>
 
-      <button>
-        Deploy App
-      </button>
+      </div>
 
-    </div>
+      <!-- ========================================
+           ACTIVITY SECTION
+      ========================================= -->
 
-  </div>
+      <div
+        style="
+          margin-top:30px;
+          background:#111827;
+          padding:20px;
+          border-radius:20px;
+          border:1px solid rgba(255,255,255,0.05);
+        "
+      >
 
-</section>
+        <h2
+          style="
+            margin-bottom:20px;
+            color:white;
+          "
+        >
+          Recent Activity
+        </h2>
 
-  </main>  <!-- ========================================
+        <div
+          style="
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+          "
+        >
+
+          <div
+            style="
+              background:#0f172a;
+              padding:15px;
+              border-radius:12px;
+            "
+          >
+            🚀 Deployment completed successfully.
+          </div>
+
+          <div
+            style="
+              background:#0f172a;
+              padding:15px;
+              border-radius:12px;
+            "
+          >
+            🤖 AI generated new component files.
+          </div>
+
+          <div
+            style="
+              background:#0f172a;
+              padding:15px;
+              border-radius:12px;
+            "
+          >
+            👥 New collaborator joined workspace.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================
        JS
-  ========================================= -->  <script src="/js/main.js"></script></body></html>
+  ========================================= -->
+
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>
