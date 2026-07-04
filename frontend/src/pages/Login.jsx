@@ -3,7 +3,12 @@ import { useState } from "react";
 import { supabase }
 from "../lib/supabase";
 
+import { useNavigate }
+from "react-router-dom";
+
 function Login() {
+
+  const navigate = useNavigate();
 
   const [email, setEmail] =
     useState("");
@@ -11,9 +16,24 @@ function Login() {
   const [password, setPassword] =
     useState("");
 
+  const [loading, setLoading] =
+    useState(false);
+
   const login = async () => {
 
-    const { error } =
+    if (!email || !password) {
+
+      alert(
+        "Please enter email and password"
+      );
+
+      return;
+
+    }
+
+    setLoading(true);
+
+    const { data, error } =
       await supabase.auth.signInWithPassword({
 
         email,
@@ -21,17 +41,26 @@ function Login() {
 
       });
 
+    setLoading(false);
+
     if (error) {
 
       alert(error.message);
 
-    }
+      console.error(error);
 
-    else {
-
-      alert("Login Success 🚀");
+      return;
 
     }
+
+    console.log(
+      "LOGIN SUCCESS",
+      data
+    );
+
+    alert("Login Success 🚀");
+
+    navigate("/");
 
   };
 
@@ -44,6 +73,10 @@ function Login() {
         <h1>
           Login
         </h1>
+
+        <p>
+          Login to continue using Quavron
+        </p>
 
         <input
           type="email"
@@ -63,8 +96,15 @@ function Login() {
           }
         />
 
-        <button onClick={login}>
-          Login
+        <button
+          onClick={login}
+          disabled={loading}
+        >
+          {
+            loading
+              ? "Loading..."
+              : "Login"
+          }
         </button>
 
       </div>
