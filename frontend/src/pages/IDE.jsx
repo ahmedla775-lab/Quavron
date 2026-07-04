@@ -26,6 +26,7 @@ ReactDOM.createRoot(
   background:#0f172a;
   color:white;
   font-family:Arial;
+  padding:20px;
 }`,
 
     "package.json": `{
@@ -78,7 +79,7 @@ ReactDOM.createRoot(
 
     setFiles({
       ...files,
-      [activeFile]: value
+      [activeFile]: value || ""
     });
 
   };
@@ -90,7 +91,13 @@ ReactDOM.createRoot(
     const name =
       prompt || "NewFile.js";
 
-    if (files[name]) return;
+    if (files[name]) {
+
+      alert("File already exists");
+
+      return;
+
+    }
 
     setFiles({
       ...files,
@@ -112,6 +119,18 @@ ReactDOM.createRoot(
 
   const deleteFile = (file) => {
 
+    if (
+      Object.keys(files).length <= 1
+    ) {
+
+      alert(
+        "Cannot delete all files"
+      );
+
+      return;
+
+    }
+
     const updated = { ...files };
 
     delete updated[file];
@@ -132,11 +151,25 @@ ReactDOM.createRoot(
 
   };
 
-  /* AI */
+  /* RUN PROJECT */
+
+  const runProject = () => {
+
+    alert(
+      "Project Running 🚀"
+    );
+
+    console.log(
+      "RUNNING PROJECT"
+    );
+
+  };
+
+  /* AI GENERATOR */
 
   const generateAI = () => {
 
-    if (!prompt) return;
+    if (!prompt.trim()) return;
 
     let generated = "";
 
@@ -178,6 +211,20 @@ ReactDOM.createRoot(
     <div>
       Dashboard UI 🚀
     </div>
+  );
+}`;
+
+    }
+
+    else if (
+      prompt.toLowerCase().includes("navbar")
+    ) {
+
+      generated = `export default function Navbar() {
+  return (
+    <nav>
+      Navbar 🚀
+    </nav>
   );
 }`;
 
@@ -290,7 +337,10 @@ ReactDOM.createRoot(
 
           <span>{activeFile}</span>
 
-          <button className="run-btn">
+          <button
+            className="run-btn"
+            onClick={runProject}
+          >
             ▶ Run
           </button>
 
@@ -383,6 +433,7 @@ ReactDOM.createRoot(
         <iframe
           title="preview"
           className="preview-frame"
+          sandbox="allow-scripts"
           srcDoc={`
 <html>
 
