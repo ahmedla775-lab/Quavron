@@ -4,7 +4,12 @@ from "react";
 import { supabase }
 from "../lib/supabase";
 
+import { useNavigate }
+from "react-router-dom";
+
 function Register() {
+
+  const navigate = useNavigate();
 
   const [email, setEmail] =
     useState("");
@@ -12,9 +17,34 @@ function Register() {
   const [password, setPassword] =
     useState("");
 
+  const [loading, setLoading] =
+    useState(false);
+
   const register = async () => {
 
-    const { error } =
+    if (!email || !password) {
+
+      alert(
+        "Please enter email and password"
+      );
+
+      return;
+
+    }
+
+    if (password.length < 6) {
+
+      alert(
+        "Password must be at least 6 characters"
+      );
+
+      return;
+
+    }
+
+    setLoading(true);
+
+    const { data, error } =
       await supabase.auth.signUp({
 
         email,
@@ -22,19 +52,28 @@ function Register() {
 
       });
 
+    setLoading(false);
+
     if (error) {
 
       alert(error.message);
 
-    }
+      console.error(error);
 
-    else {
-
-      alert(
-        "Account Created 🚀"
-      );
+      return;
 
     }
+
+    console.log(
+      "REGISTER SUCCESS",
+      data
+    );
+
+    alert(
+      "Account Created Successfully 🚀"
+    );
+
+    navigate("/login");
 
   };
 
@@ -47,6 +86,10 @@ function Register() {
         <h1>
           Register
         </h1>
+
+        <p>
+          Create your Quavron account
+        </p>
 
         <input
           type="email"
@@ -66,8 +109,15 @@ function Register() {
           }
         />
 
-        <button onClick={register}>
-          Create Account
+        <button
+          onClick={register}
+          disabled={loading}
+        >
+          {
+            loading
+              ? "Loading..."
+              : "Create Account"
+          }
         </button>
 
       </div>
