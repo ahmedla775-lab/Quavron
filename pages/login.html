@@ -1,57 +1,86 @@
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8" /><meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-/>
+<!DOCTYPE html>
+<html lang="en">
 
-  <title>Login - Quavron</title>  <link
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Login - Quavron</title>
+
+  <link
     rel="stylesheet"
     href="/css/style.css"
-  /></head><body class="auth-page">  <div class="auth-container"><div class="auth-card">
+  />
 
-  <div class="auth-logo">
-    Quavron
+</head>
+
+<body class="auth-page">
+
+  <div class="auth-container">
+
+    <div class="auth-card">
+
+      <div class="auth-logo">
+        Quavron
+      </div>
+
+      <h1>
+        Welcome Back
+      </h1>
+
+      <p>
+        Login to continue coding in the cloud.
+      </p>
+
+      <form class="auth-form">
+
+        <input
+          type="email"
+          placeholder="Email Address"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          required
+        />
+
+        <button type="submit">
+          Login
+        </button>
+
+      </form>
+
+      <div class="auth-links">
+
+        <a href="#">
+          Forgot Password?
+        </a>
+
+        <a href="/register">
+          Create Account
+        </a>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <h1>
-    Welcome Back
-  </h1>
+  <!-- SUPABASE -->
 
-  <p>
-    Login to continue coding in the cloud.
-  </p>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
-  <form class="auth-form">
+  <!-- MAIN JS -->
 
-    <input
-      type="email"
-      placeholder="Email Address"
-      required
-    />
+  <script src="/js/main.js"></script>
 
-    <input
-      type="password"
-      placeholder="Password"
-      required
-    />
+</body>
 
-    <button type="submit">
-      Login
-    </button>
-
-  </form>
-
-  <div class="auth-links">
-
-    <a href="#">
-      Forgot Password?
-    </a>
-
-    <a href="/register">
-      Create Account
-    </a>
-
-  </div>
-
-</div>
-
-  </div>  <script src="/js/main.js"></script></body></html>
+</html>
