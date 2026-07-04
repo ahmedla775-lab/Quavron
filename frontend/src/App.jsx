@@ -3,7 +3,8 @@ import { useState } from "react";
 import {
   Routes,
   Route,
-  NavLink
+  NavLink,
+  Navigate
 } from "react-router-dom";
 
 /* PAGES */
@@ -231,8 +232,6 @@ function App() {
               🤖
             </button>
 
-            
-
           </div>
 
         </header>
@@ -294,6 +293,13 @@ function App() {
           <Route
             path="/register"
             element={<Register />}
+          />
+
+          {/* FALLBACK */}
+
+          <Route
+            path="*"
+            element={<Navigate to="/" />}
           />
 
         </Routes>
