@@ -774,3 +774,136 @@ body{
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+/* =========================
+   EXTRA MODERN UI
+========================= */
+
+.projects-section{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.section-title h2{
+  font-size:30px;
+  font-weight:700;
+}
+
+.section-title button{
+  background:#2563eb;
+  border:none;
+  color:white;
+  padding:12px 18px;
+  border-radius:14px;
+}
+
+/* HERO EFFECT */
+
+.hero-left{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-left::before{
+  content:"";
+
+  position:absolute;
+
+  width:400px;
+  height:400px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56,189,248,0.15),
+      transparent 70%
+    );
+
+  top:-150px;
+  right:-150px;
+
+  z-index:0;
+}
+
+.hero-left *{
+  position:relative;
+  z-index:1;
+}
+
+/* GLASS EFFECT */
+
+.hero-left,
+.ai-card,
+.stat-card,
+.project-card{
+  backdrop-filter:blur(18px);
+}
+
+/* HOVER */
+
+.stat-card,
+.project-card,
+.ai-card{
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.stat-card:hover,
+.project-card:hover,
+.ai-card:hover{
+
+  transform:translateY(-8px);
+
+  border-color:
+    rgba(37,99,235,0.5);
+
+  box-shadow:
+    0 10px 40px
+    rgba(37,99,235,0.18);
+}
+
+/* BUTTON GLOW */
+
+.primary-btn{
+  box-shadow:
+    0 0 20px
+    rgba(37,99,235,0.4);
+}
+
+/* ANIMATION */
+
+.hero-left,
+.hero-right,
+.stat-card,
+.project-card{
+
+  animation:
+    fadeUp 0.7s ease;
+
+}
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:
+      translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:
+      translateY(0);
+  }
+
+}
