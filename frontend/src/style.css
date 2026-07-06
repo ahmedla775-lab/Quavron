@@ -731,3 +731,46 @@ body{
   background:#334155;
   border-radius:20px;
 }
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+.primary-btn,
+.secondary-btn{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
+}
+
+.stat-card svg{
+  margin-bottom:15px;
+  color:#38bdf8;
+}
+
+.project-card{
+  transition:0.3s;
+}
+
+.project-card:hover{
+  transform:translateY(-6px);
+  border-color:#2563eb;
+}
+
+.ai-card{
+  box-shadow:
+    0 0 40px rgba(37,99,235,0.15);
+}
+
+.hero-left h1{
+  background:linear-gradient(
+    90deg,
+    white,
+    #38bdf8
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
